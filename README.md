@@ -14,6 +14,19 @@ The app is designed for offline evaluation on a laptop or edge workstation. Synt
 - Triggers incremental training only when drift is sustained and the buffer is qualified.
 - Promotes or rolls back candidate models based on validation accuracy.
 
+## Invention-Driven Features
+
+The project is designed to align with the invention disclosure framework for an on-device incremental learning camera system. It implements the following disclosure-relevant features:
+
+- Composite multi-signal drift detection by combining feature shift, prediction uncertainty, and tracker stability into one operational score.
+- Threshold-gated retraining decisions, so adaptation is not triggered merely on a single transient drift event.
+- Pseudo-label buffer qualification using confidence thresholds and bounded buffer management to admit only reliable samples.
+- On-device incremental adaptation rather than full cloud-based retraining, preserving privacy and reducing bandwidth needs.
+- Real-time dashboard monitoring for drift posture, buffer quality, training gates, and model validation status.
+- Closed-loop self-correction, where the system monitors, qualifies labels, updates the model, and continues monitoring without manual retraining cycles.
+
+This makes the prototype suitable for edge deployment scenarios that require automated model refresh in changing environments with limited supervision and compute resources.
+
 ## App Structure
 
 - **Live Monitor**: camera signal, current detections, composite drift score, and live operating posture.
